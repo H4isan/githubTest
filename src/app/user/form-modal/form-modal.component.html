@@ -1,0 +1,9 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <input name="firstname" ngModel required #firstname="ngModel">
+      <input name="lastname" ngModel required>
+      <input name="identify" ngModel required>
+      <input name="birthday" ngModel required>
+      <input name="email" ngModel required>
+      <input name="githubuser" ngModel required>
+      <button>Submit</button>
+    </form>

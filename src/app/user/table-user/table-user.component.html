@@ -1,0 +1,25 @@
+  <input mdInput #filter  [disabled]="state" placeholder="Filter users">
+
+<div *ngIf="githubUserRepos">
+
+
+  <table mdSort (mdSortChange)="sortData($event)">
+    <tr>
+      <th md-sort-header="name">nombre</th>
+      <th md-sort-header="calories">url git</th>
+      <th md-sort-header="fat">descrption</th>
+      <th md-sort-header="carbs">Lenguaje</th>
+      <th md-sort-header="protein">Created at</th>
+    </tr>
+
+    <tr *ngFor="let repos of githubUserRepos | paginate: { itemsPerPage: 5, currentPage: p }">
+      <td>{{repos.name}}</td>
+      <td>{{repos.git_url}}</td>
+      <td>{{repos.description}}</td>
+      <td>{{repos.language}}</td>
+      <td>{{repos.created_at}}</td>
+    </tr>
+
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

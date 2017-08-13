@@ -1,0 +1,4 @@
+<button md-button (click)="openDialog()">Nuevo Candidato</button>
+
+<app-header [githubUsers]="cookieUserParser" (buttonClicked)="getUserGithub($event)" ></app-header>
+<app-table-user [githubUser]="githubUserNick"></app-table-user>

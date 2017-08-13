@@ -1,0 +1,18 @@
+<table>
+<tr>
+  <th>githubuser</th>
+  <th>Nombre</th>
+  <th>Apellido</th>
+  <th>Indentificacion</th>
+  <th>Fecha de nacimiento</th>
+  <th>Email</th>
+</tr>
+<tr *ngFor="let item of githubUsersInfo">
+  <td (click)="sendUser(item.githubuser)" >{{item.githubuser}}</td>
+  <td>{{item.firstname}}</td>
+  <td>{{item.lastname}}</td>
+  <td>{{item.identify}}</td>
+  <td>{{item.birthday}}</td>
+  <td>{{item.email}}</td>
+</tr   >
+</table>

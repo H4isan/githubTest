@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  constructor() {
+
+// /*
+// * List of cookies as Object, like: { cookieName: "cookieValue", cookieName2: "cookieValue2" ... etc }
+// */
+//   console.log(Cookie.getAll());
+
+  }
 }
