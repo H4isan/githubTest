@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  p = 1;
   @Output() buttonClicked: EventEmitter<any> = new EventEmitter<any>();
   private _dataGithubUsers = new BehaviorSubject<any[]>([]);
   @Input()

@@ -6,13 +6,17 @@
   <th>Indentificacion</th>
   <th>Fecha de nacimiento</th>
   <th>Email</th>
+  <th></th>
 </tr>
-<tr *ngFor="let item of githubUsersInfo">
-  <td (click)="sendUser(item.githubuser)" >{{item.githubuser}}</td>
+<tr *ngFor="let item of githubUsersInfo | paginate: { itemsPerPage: 5, currentPage: p, id: 'githubUsers'}">
+  <td>{{item.githubuser}}</td>
   <td>{{item.firstname}}</td>
   <td>{{item.lastname}}</td>
   <td>{{item.identify}}</td>
   <td>{{item.birthday}}</td>
   <td>{{item.email}}</td>
+  <td><button md-button (click)="sendUser(item.githubuser)">Ver</button><td>
 </tr   >
 </table>
+
+  <pagination-controls (pageChange)="p = $event" id="githubUsers"></pagination-controls>

@@ -1,6 +1,7 @@
-  <input mdInput #filter  [disabled]="state" placeholder="Filter users">
-
-<div *ngIf="githubUserRepos">
+<md-input-container>
+<input mdInput #filter  [disabled]="state" placeholder="Filter users">
+</md-input-container>
+<div *ngIf="state">
 
 
   <table mdSort (mdSortChange)="sortData($event)">
@@ -12,14 +13,15 @@
       <th md-sort-header="protein">Created at</th>
     </tr>
 
-    <tr *ngFor="let repos of githubUserRepos | paginate: { itemsPerPage: 5, currentPage: p }">
+    <tr *ngFor="let repos of githubUserRepos | paginate: { itemsPerPage: 5, currentPage: p, id:'userRepos' }">
       <td>{{repos.name}}</td>
       <td>{{repos.git_url}}</td>
       <td>{{repos.description}}</td>
       <td>{{repos.language}}</td>
-      <td>{{repos.created_at}}</td>
+      <td>{{repos.created_at | date }}</td>
     </tr>
 
   </table>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  <pagination-controls (pageChange)="p = $event" id="userRepos"></pagination-controls>
 </div>

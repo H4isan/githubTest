@@ -6,7 +6,7 @@ import { TableUserComponent } from './table-user/table-user.component';
 import { UserServiceService } from './shared/user-service.service';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdSortModule, MdInputModule, MdDialogModule } from '@angular/material';
+import { MdSortModule, MdInputModule, MdDialogModule, MdDatepickerModule, MdNativeDateModule } from '@angular/material';
 import { SharedModule } from './shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -19,7 +19,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SharedModule,
     NgxPaginationModule,
     MdInputModule,
-    MdDialogModule
+    MdDialogModule,
+    MdDatepickerModule,
+    MdNativeDateModule
   ],
   declarations: [UserComponent, FormModalComponent, TableUserComponent],
   exports: [UserComponent],

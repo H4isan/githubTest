@@ -1,9 +1,23 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-      <input name="firstname" ngModel required #firstname="ngModel">
-      <input name="lastname" ngModel required>
-      <input name="identify" ngModel required>
-      <input name="birthday" ngModel required>
-      <input name="email" ngModel required>
-      <input name="githubuser" ngModel required>
-      <button>Submit</button>
-    </form>
+  <md-input-container>
+    <input mdInput placeholder="Nombre" name="firstname" ngModel required>
+  </md-input-container>
+  <md-input-container>
+    <input mdInput placeholder="Apellido" name="lastname" ngModel required>
+  </md-input-container>
+  <md-input-container>
+    <input mdInput placeholder="Identidad" name="identify" ngModel required>
+  </md-input-container>
+  <md-input-container>
+    <input mdInput [mdDatepicker]="picker" readonly name="birthday" placeholder="Choose a date" ngModel required>
+    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+  </md-input-container>
+  <md-datepicker #picker></md-datepicker>
+  <md-input-container>
+    <input mdInput placeholder="Correo" name="email" ngModel required>
+  </md-input-container>
+  <md-input-container>
+    <input mdInput placeholder="GithubUser" name="githubuser" ngModel required>
+  </md-input-container>
+  <button>Submit</button>
+</form>
