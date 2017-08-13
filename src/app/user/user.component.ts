@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cookie } from 'ng2-cookies/ng2-cookies';
-import {MdDialog, MdDialogRef} from '@angular/material';
-import {FormModalComponent} from './form-modal/form-modal.component';
+import { MdDialog, MdDialogRef } from '@angular/material';
+import { FormModalComponent } from './form-modal/form-modal.component';
 
 @Component({
   selector: 'app-user',
@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   constructor(public dialog: MdDialog) { }
   githubUserNick;
   ngOnInit() {
-   this.getCookieUsers();
+    this.getCookieUsers();
   }
   openDialog() {
     const dialogRef = this.dialog.open(FormModalComponent);
@@ -27,7 +27,7 @@ export class UserComponent implements OnInit {
   }
 
   getCookieUsers(): void {
-     this.cookieUserParser = Cookie.get('githubUsers') ? JSON.parse(Cookie.get('githubUsers')) : [];
+    this.cookieUserParser = Cookie.get('githubUsers') ? JSON.parse(Cookie.get('githubUsers')) : [];
   }
 
 }

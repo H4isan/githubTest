@@ -13,7 +13,7 @@
   <td>{{item.firstname}}</td>
   <td>{{item.lastname}}</td>
   <td>{{item.identify}}</td>
-  <td>{{item.birthday}}</td>
+  <td>{{item.birthday | date}}</td>
   <td>{{item.email}}</td>
   <td><button md-button (click)="sendUser(item.githubuser)">Ver</button><td>
 </tr   >

@@ -28,7 +28,7 @@ export class TableUserComponent implements OnInit {
   sortedData;
   githubUserRepos = [];
   p: number = 1;
-  state = false;
+  state = true;
   constructor(private userService: UserServiceService) {
   }
   ngOnInit() {
@@ -54,7 +54,7 @@ export class TableUserComponent implements OnInit {
             response.map((x) => {
               this.githubUserRepos.push(x);
               this.temp = [...this.githubUserRepos];
-              this.state = true; 
+              this.state = false; 
             });
           });
         }
