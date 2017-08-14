@@ -395,11 +395,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserServiceService = (function () {
     function UserServiceService(_http) {
         this._http = _http;
-        this.github = 'https://raw.githubusercontent.com/H4isan/custom_libs/master/TeamChallenges.json';
         this.githubReposlanguage = 'https://api.github.com/repos/h4isan/YuxiTest/languages';
     }
     UserServiceService.prototype.getUserRepos = function (user) {
-        return this._http.get('http://api.github.com/users/' + user + '/repos')
+        return this._http.get('https://api.github.com/users/' + user + '/repos')
             .map(function (res) { return res.json(); });
     };
     UserServiceService.prototype.getcookieUser = function () {

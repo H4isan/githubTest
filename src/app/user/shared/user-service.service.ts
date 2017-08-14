@@ -9,12 +9,11 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 @Injectable()
 export class UserServiceService {
 
-  private github = 'https://raw.githubusercontent.com/H4isan/custom_libs/master/TeamChallenges.json';
-  private githubReposlanguage = 'https://api.github.com/repos/h4isan/YuxiTest/languages';
+   private githubReposlanguage = 'https://api.github.com/repos/h4isan/YuxiTest/languages';
   constructor(private _http: Http) { }
 
   getUserRepos(user): Observable<any[]> {
-    return this._http.get('http://api.github.com/users/' + user + '/repos')
+    return this._http.get('https://api.github.com/users/' + user + '/repos')
       .map((res: Response) => res.json());
   }
   getcookieUser(): Observable<any[]> {
